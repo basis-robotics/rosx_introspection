@@ -28,6 +28,7 @@ endif()
 
 find_package(RapidJSON REQUIRED)
 
+if(0)
 if(NOT fastcdr_FOUND )
     message(STATUS "[FastCdr] not found, create static libraries")
     # Override Fast-CDR option: compile as static lib
@@ -37,6 +38,7 @@ if(NOT fastcdr_FOUND )
 else()
     # Mention that FastCdr has been found on system
     message(STATUS "[FastCdr] found, version: ${fastcdr_VERSION}")
+endif()
 endif()
 
 ###############################################
