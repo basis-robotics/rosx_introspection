@@ -23,7 +23,7 @@ if (ament_cmake_FOUND)
        src/ros_utils/message_definition_cache.cpp
        src/ros_utils/ros2_helpers.cpp)
 else()
-    find_package(fastcdr)
+    # find_package(fastcdr)
 endif()
 
 find_package(RapidJSON REQUIRED)
