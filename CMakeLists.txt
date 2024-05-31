@@ -22,11 +22,13 @@ if (ament_cmake_FOUND)
     set(EXTRA_SRC
        src/ros_utils/message_definition_cache.cpp
        src/ros_utils/ros2_helpers.cpp)
+else()
+    find_package(fastcdr)
 endif()
 
 find_package(RapidJSON REQUIRED)
 
-if(NOT USING_ROS2 )
+if(NOT fastcdr_FOUND )
     message(STATUS "[FastCdr] not found, create static libraries")
     # Override Fast-CDR option: compile as static lib
     SET(BUILD_SHARED_LIBS OFF CACHE BOOL "Create static libraries by default")
